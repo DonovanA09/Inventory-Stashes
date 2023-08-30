@@ -35,7 +35,7 @@ end
 local listen = false
 
 Citizen.CreateThread(function()
-    for location, locationData in pairs(Inventory.JobStashs) do
+    for location, locationData in pairs(Config.JobStashs) do
         local offsetZ = 5.0
         local circleCenter = vector3(locationData.coords.x, locationData.coords.y, locationData.coords.z)
 
@@ -64,7 +64,7 @@ Citizen.CreateThread(function()
         end)
     end
     
-    for location, locationData in pairs(Inventory.PublicStashs) do
+    for location, locationData in pairs(Config.PublicStashs) do
         local circleCenter = vector3(locationData.coords.x, locationData.coords.y, locationData.coords.z)
 
         LoopZone = CircleZone:Create(circleCenter, 2.0, {
